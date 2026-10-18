@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main(){
+func main() {
 	var totalMinutes int
 	fmt.Print("Введите количество минут: ")
 	_, err := fmt.Scan(&totalMinutes)
@@ -17,5 +17,5 @@ func main(){
 	const minutesInHour int = 60
 	var totalHours = totalMinutes / minutesInHour
 	fmt.Printf("Полных часов: %d\n", totalHours)
-	fmt.Printf("Оставшихся минут %d", totalMinutes % minutesInHour)
+	fmt.Printf("Оставшихся минут %d", totalMinutes%minutesInHour)
 }
