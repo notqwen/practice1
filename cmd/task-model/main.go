@@ -50,8 +50,8 @@ func main() {
 		{ID: 2, Title: "Освоить функции", Status: "in_progress", Priority: 2},
 		{ID: 3, Title: "Изучить структуры", Status: "new", Priority: 3},
 	}
-	
-	t := findTaskByID(tasks, 2);
+
+	t := findTaskByID(tasks, 2)
 	if t != nil {
 		t.Complete()
 		t.SetPriority(3)
