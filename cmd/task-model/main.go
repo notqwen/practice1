@@ -34,6 +34,16 @@ func findTaskByID(tasks []Task, id int) *Task {
 	return nil
 }
 
+func tasksByStatus(tasks []Task, status string) []Task {
+	result := []Task{}
+	for i := range tasks {
+		if tasks[i].Status == status {
+			result = append(result, tasks[i])
+		}
+	}
+	return result
+}
+
 func main() {
 	tasks := []Task{
 		{ID: 1, Title: "Установить Go", Status: "done", Priority: 1},
@@ -51,5 +61,11 @@ func main() {
 	}
 	if findTaskByID(tasks, 99) == nil {
 		fmt.Println("Задача не найдена")
+	}
+	needStatuses := tasksByStatus(tasks, "done")
+	if len(needStatuses) > 0 {
+		for _, task := range needStatuses {
+			fmt.Println(task.Summary())
+		}
 	}
 }
